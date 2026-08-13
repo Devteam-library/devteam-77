@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devteam-library"
+version = "0.1.0"
+description = "Утилиты для команд разработки: задачи и спринты, standup-отчёты, чек-листы PR, changelog из git-истории, расчёт рабочих дней."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Kycaid Devteam" },
+]
+keywords = ["devteam", "productivity", "sprint", "changelog", "standup", "code-review"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.scripts]
+devteam = "devteam_library.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
